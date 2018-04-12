@@ -1,5 +1,5 @@
 # capoupacaptcha
-##JAVA PROJECT
+## JAVA PROJECT
 
 Ecole d'ingénieur IMAC
 Avril 2018
