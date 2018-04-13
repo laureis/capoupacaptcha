@@ -1,0 +1,29 @@
+<project default="run">
+
+<target name="clean">
+    <delete dir="bin" />
+    <delete dir="exe" />
+    <echo message="Project cleaned ! "/>
+</target>
+
+
+<target name="compile">
+    <mkdir dir="bin/fr/upem/captcha" />
+    <javac srcdir="src" destdir="bin/fr/upem/captcha"/>
+</target>
+
+<target name="jar" depends="compile">
+<mkdir dir="exe"/>
+	<jar destfile="exe/capoupacaptcha.jar" basedir="bin/fr/upem/captcha">
+		<manifest>
+			<attribute name="Main-Class" value="bin/fr/upem/captcha/Main.class"/>
+		</manifest>
+    </jar>
+<echo message="Executable created ! "/>
+</target>
+
+<target name="run" depends="jar">
+    <java jar="exe/capoupacaptcha.jar" fork="true"/>
+</target>
+
+</project>
