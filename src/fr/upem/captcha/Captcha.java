@@ -41,14 +41,15 @@ public class Captcha extends JFrame {
 	private JLabel bjr = new JLabel("hola bb");
 	private JButton b_jouer = new JButton("Start");
 	private CaptchaController controller = new CaptchaController();
-	private GridLayout layout = new GridLayout(4,4);
-
+	//private GridLayout layout = new GridLayout(4,4);
+	private JPanel panelImages = new JPanel(new GridLayout(4,4));
+	
 	public Captcha() throws IOException  {
 
 			this.setTitle("Capoupacaptcha");
-			this.setSize(800,350);
+			this.setSize(360,640);
 			this.setResizable(false);
-			this.setLayout(layout);
+			//this.setLayout(layout);
 			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			this.setLocationRelativeTo(null);
 			
@@ -63,11 +64,10 @@ public class Captcha extends JFrame {
                     }
                 }
 			);
-
 			for (int i = 0; i < controller.getMainTheme().getImages().size(); i++) {
 				System.out.println(controller.getMainTheme().getImages().get(i).getUrl());
 				try {
-					this.add(createLabelImage(controller.getMainTheme().getImages().get(i).getUrl()));
+					panelImages.add(createLabelImage(controller.getMainTheme().getImages().get(i).getUrl()));
 				}
 				catch (IOException oops) {
 					System.out.println("oops");
@@ -76,6 +76,7 @@ public class Captcha extends JFrame {
 
 			pan.add(b_jouer);
 			this.add(pan, BorderLayout.SOUTH);
+			this.add(panelImages);
 			this.setVisible(true);
 
     }
@@ -85,8 +86,9 @@ public class Captcha extends JFrame {
 		try {
 			
 			BufferedImage img = ImageIO.read(new File(imageLocation)); //lire l'image
-			Image sImage = img.getScaledInstance(800/4,350/4, Image.SCALE_SMOOTH);
+			Image sImage = img;
 			label = new JLabel(new ImageIcon(sImage));
+			label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		}
 		catch (IOException oups) {
 			return new JLabel("mdr c a apas marché");
