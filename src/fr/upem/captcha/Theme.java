@@ -36,4 +36,13 @@ public class Theme {
         this.url = url;
         this.images = images;
     }
+
+    @Override
+    public String toString() {
+        String s = this.name + " / " + this.url + "\n";
+        for (int i = 0; i < this.images.toArray().length; i++) {
+            s+= this.images.get(i).getName() + "\n";
+        }
+        return s;
+    }
 }
