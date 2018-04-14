@@ -4,12 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Captcha extends JFrame {
 
@@ -42,6 +44,11 @@ public class Captcha extends JFrame {
 			this.add(pan, BorderLayout.SOUTH);
 			this.setVisible(true);
 
+    }
+
+    public int loadRandomTheme() {
+    	int folderCount = new File("data").list().length;
+    	return ThreadLocalRandom.current().nextInt(0, folderCount);
     }
 }
 	
