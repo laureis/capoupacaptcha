@@ -8,8 +8,6 @@
 
     <property name="main-class"  value="fr.upem.captcha.Main"/>
 
-
-
     <target name="clean">
         <delete dir="${bin.dir}"/>
     </target>

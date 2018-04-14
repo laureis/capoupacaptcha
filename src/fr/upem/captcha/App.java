@@ -2,6 +2,12 @@ package fr.upem.captcha;
 
 public class App {
 
-    // App composée d'une page menu 
-    // et d'une page captcha
+    //private final Menu menu;
+    private final Captcha captcha;
+
+    public App() {
+
+        //this.menu = new Menu();
+        this.captcha = new Captcha();
+    }
 }

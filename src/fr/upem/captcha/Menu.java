@@ -31,7 +31,7 @@ public class Menu extends JFrame {
 
     private static JLabel createTitle() {
 
-        JLabel label = new JLabel("<html><div style=' font-family: url(''); font-size:20px; text-align:center;'>"+"CAPOUPACAPTCHA"+"</div></html>");
+        JLabel label = new JLabel("capoupacaptcha");
         label.setHorizontalAlignment(SwingConstants.CENTER);
         label.setVerticalAlignment(SwingConstants.CENTER);
         return label;
