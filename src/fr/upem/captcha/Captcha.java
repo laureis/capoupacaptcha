@@ -62,7 +62,7 @@ public class Captcha extends JFrame {
 			GridLayout layoutImages = new GridLayout(2,3);
 			panelImages.setLayout(layoutImages);
 			panelImages.setPreferredSize(new Dimension(360,300));
-			for (int i = 0; i < controller.getImages().size(); i++) {
+			for (int i = 0; i < 6; i++) {
 				System.out.println(controller.getImages().get(i).getUrl());
 				try {
 					panelImages.add(createLabelImage(controller.getImages().get(i).getUrl()));
@@ -77,7 +77,7 @@ public class Captcha extends JFrame {
 			submitButton.addActionListener( new ActionListener() {
 				@SuppressWarnings("unused")
 				public void actionPerformed(ActionEvent arg0) {
-                    
+                    System.out.println(controller.checkSelectedImages());
                     JOptionPane.showMessageDialog(null, Captcha.coucou, "Capoupacaptcha" ,JOptionPane.INFORMATION_MESSAGE);
                 }
             });
