@@ -43,7 +43,8 @@ public class Captcha extends CaptchaFrame {
 	private JPanel panelSubmit = new JPanel();
 	
 
-	public static String coucou = "C'est pas qu'on te fait pas confiance, mais prouve nous que t'es pas un robot";
+	public static String oui = "bien ouej frère";
+	public static String non = "oulalalala tu es peut-être un robot...";
 	
 	public Captcha()  {
 
@@ -52,7 +53,7 @@ public class Captcha extends CaptchaFrame {
     		panelDesc.setBackground(null);
         	panelImages.setBackground(null);
         	panelSubmit.setBackground(null);
-			panelDesc.add(new CaptchaLabel("Cap ou pas cap de sélectionner les images ? "));
+			panelDesc.add(new CaptchaLabel("Cap ou pas cap de choisir les images "+controller.getMainTheme().getName()+" ?"));
 			this.add(panelDesc, BorderLayout.NORTH);
 
 			// Panel des images
@@ -71,7 +72,7 @@ public class Captcha extends CaptchaFrame {
 				@SuppressWarnings("unused")
 				public void actionPerformed(ActionEvent arg0) {
                     System.out.println(controller.checkSelectedImages());
-                    JOptionPane.showMessageDialog(null, Captcha.coucou, "Capoupacaptcha" ,JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, controller.checkSelectedImages() ? Captcha.oui : Captcha.non, "Capoupacaptcha" ,JOptionPane.INFORMATION_MESSAGE);
                 }
             });
 			panelSubmit.add(submitButton);

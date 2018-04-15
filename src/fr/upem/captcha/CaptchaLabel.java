@@ -40,6 +40,7 @@ public class CaptchaLabel extends JLabel {
 
         super();
         setText(getHTMLStyle(label));
+        
     }
 
     public String getHTMLStyle(String label) {

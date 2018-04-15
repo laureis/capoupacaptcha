@@ -21,6 +21,8 @@ public class CaptchaButton extends JButton {
         setBackground(Color.WHITE);
         setIcon(new ImageIcon("assets/btn.png"));
         setRolloverIcon(new ImageIcon("assets/btn-hover.png"));
+
+        
     }
 
     public String getHTMLStyle(String label) {
