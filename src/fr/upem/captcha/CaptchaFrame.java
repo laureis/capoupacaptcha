@@ -13,21 +13,13 @@ import javax.swing.JFrame;
 
 public class CaptchaFrame extends JFrame {
 
-    private ImageIcon background;
-
     public CaptchaFrame() {
         super();
         this.setTitle("capoupacaptcha");
         this.setSize(360,640);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.background = new ImageIcon("assets/bg.png");
-    }
-    
-    public void paint(Graphics g) {
-        
-        super.paint(g);
-        g.drawImage(background.getImage(), 0, 0, this);
+        this.getContentPane().setBackground(new Color(0xFF5555));
     }
 
 }

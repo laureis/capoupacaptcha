@@ -41,16 +41,18 @@ public class Captcha extends CaptchaFrame {
 	private JPanel panelDesc = new JPanel(); 
 	private JPanel panelImages = new JPanel();
 	private JPanel panelSubmit = new JPanel();
+	
 
 	public static String coucou = "C'est pas qu'on te fait pas confiance, mais prouve nous que t'es pas un robot";
 	
-	public Captcha() throws IOException  {
+	public Captcha()  {
 
 			super();
-			
-			// Panel de la description
-			panelDesc.add(new JLabel("Cap ou pas cap de sélectionner les images ? "));
-			panelDesc.setBackground(Color.YELLOW);
+		
+    		panelDesc.setBackground(null);
+        	panelImages.setBackground(null);
+        	panelSubmit.setBackground(null);
+			panelDesc.add(new CaptchaLabel("Cap ou pas cap de sélectionner les images ? "));
 			this.add(panelDesc, BorderLayout.NORTH);
 
 			// Panel des images
@@ -59,12 +61,7 @@ public class Captcha extends CaptchaFrame {
 			panelImages.setPreferredSize(new Dimension(360,300));
 			for (int i = 0; i < 6; i++) {
 				System.out.println(controller.getImages().get(i).getUrl());
-				try {
-					panelImages.add(createLabelImage(controller.getImages().get(i).getUrl()));
-				}
-				catch (IOException oops) {
-					System.out.println("oops");
-				}
+				panelImages.add(controller.getImages().get(i));
 			}
 			this.add(panelImages);
 
@@ -83,21 +80,5 @@ public class Captcha extends CaptchaFrame {
 			this.setVisible(true);
 
     }
-
-    private static JLabel createLabelImage(String imageLocation) throws IOException {
-		final JLabel label;
-		try {
-			
-			BufferedImage img = ImageIO.read(new File(imageLocation));
-			Image sImage = img.getScaledInstance(360/2,360/2, Image.SCALE_SMOOTH); 
-			label = new JLabel(new ImageIcon(sImage));
-			label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		}
-		catch (IOException oups) {
-
-			return new JLabel("mdr c a apas marché");
-		}
-		return label;
-	}
 }
 
