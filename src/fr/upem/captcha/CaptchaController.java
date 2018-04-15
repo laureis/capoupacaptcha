@@ -33,7 +33,7 @@ public class CaptchaController {
 
     public void setRandomTheme() {
 
-        File[] folders = new File("data").listFiles();
+        File[] folders = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"data").listFiles();
     	int folderCount = folders.length;
     	int randomIndex = ThreadLocalRandom.current().nextInt(0, folderCount);
 
