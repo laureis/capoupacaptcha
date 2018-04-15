@@ -57,7 +57,7 @@ public class Captcha extends CaptchaFrame {
 			this.add(panelDesc, BorderLayout.NORTH);
 
 			// Panel des images
-			GridLayout layoutImages = new GridLayout(2,3);
+			GridLayout layoutImages = new GridLayout(3,2);
 			panelImages.setLayout(layoutImages);
 			panelImages.setPreferredSize(new Dimension(360,300));
 			for (int i = 0; i < 6; i++) {
@@ -67,7 +67,7 @@ public class Captcha extends CaptchaFrame {
 			this.add(panelImages);
 
 			// Panel du bouton de vérification
-			CaptchaButton submitButton = new CaptchaButton("submit");
+			CaptchaButton submitButton = new CaptchaButton("S U B M I T");
 			submitButton.addActionListener( new ActionListener() {
 				@SuppressWarnings("unused")
 				public void actionPerformed(ActionEvent arg0) {
