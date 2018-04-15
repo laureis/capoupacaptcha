@@ -1,5 +1,5 @@
 package fr.upem.captcha;
-
+import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
@@ -25,12 +25,17 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.BasicStroke;
+import java.awt.Graphics2D;
 
 public class CaptchaImage extends JLabel {
 
     private String url;
     private boolean selected; 
     private Theme theme;
+    private ImageIcon img;
 
     public String getUrl() {
         return this.url;
@@ -61,22 +66,27 @@ public class CaptchaImage extends JLabel {
         this.url = url;
         this.selected = false;
         this.theme = theme;
+        this.img = new ImageIcon(new ImageIcon(url).getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH));
         this.setHorizontalAlignment(SwingConstants.CENTER);
         this.setHorizontalTextPosition(SwingConstants.CENTER);
-        this.setIcon(new ImageIcon(new ImageIcon(url).getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH)));
+        this.setIcon(img);
         this.addEvents();
     }
 
     public void selectImage() {
 
         this.selected = true;
-        this.setBorder(BorderFactory.createLineBorder(new Color(0x333333), 3));
+        Graphics g = getGraphics();
+        g.setColor(Color.WHITE);
+        g.fillRect(30, 27, 10, 100);
+        g.fillRect(30, 117, 100, 10);
+        g.dispose();
     }
 
     public void unselectImage() {
 
         this.selected = false;
-        this.setBorder(null);
+        this.repaint();
     }
 
     public void addEvents() {

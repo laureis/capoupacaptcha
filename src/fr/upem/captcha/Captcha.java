@@ -37,7 +37,6 @@ public class Captcha extends CaptchaFrame {
 
 	private CaptchaController controller = new CaptchaController();
 
-	private GridLayout mainLayout = new GridLayout(3,1);
 	private JPanel panelDesc = new JPanel(); 
 	private JPanel panelImages = new JPanel();
 	private JPanel panelSubmit = new JPanel();
@@ -58,8 +57,8 @@ public class Captcha extends CaptchaFrame {
 
 			// Panel des images
 			GridLayout layoutImages = new GridLayout(3,2);
+			
 			panelImages.setLayout(layoutImages);
-			panelImages.setPreferredSize(new Dimension(360,300));
 			for (int i = 0; i < 6; i++) {
 				System.out.println(controller.getImages().get(i).getUrl());
 				panelImages.add(controller.getImages().get(i));
