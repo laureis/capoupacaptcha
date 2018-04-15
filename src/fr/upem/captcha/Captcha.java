@@ -33,7 +33,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import java.awt.Dimension;
 
-public class Captcha extends JFrame {
+public class Captcha extends CaptchaFrame {
 
 	private CaptchaController controller = new CaptchaController();
 
@@ -46,19 +46,14 @@ public class Captcha extends JFrame {
 	
 	public Captcha() throws IOException  {
 
-			this.setTitle("Capoupacaptcha");
-			this.setSize(360,640);
-			this.setLayout(mainLayout);
-			this.setResizable(false);
-			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			this.setLocationRelativeTo(null);
+			super();
 			
-			// Panels
-
+			// Panel de la description
 			panelDesc.add(new JLabel("Cap ou pas cap de sélectionner les images ? "));
 			panelDesc.setBackground(Color.YELLOW);
 			this.add(panelDesc, BorderLayout.NORTH);
 
+			// Panel des images
 			GridLayout layoutImages = new GridLayout(2,3);
 			panelImages.setLayout(layoutImages);
 			panelImages.setPreferredSize(new Dimension(360,300));
@@ -73,7 +68,8 @@ public class Captcha extends JFrame {
 			}
 			this.add(panelImages);
 
-			JButton submitButton = new JButton("submit");
+			// Panel du bouton de vérification
+			CaptchaButton submitButton = new CaptchaButton("submit");
 			submitButton.addActionListener( new ActionListener() {
 				@SuppressWarnings("unused")
 				public void actionPerformed(ActionEvent arg0) {
@@ -98,6 +94,7 @@ public class Captcha extends JFrame {
 			label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		}
 		catch (IOException oups) {
+
 			return new JLabel("mdr c a apas marché");
 		}
 		return label;

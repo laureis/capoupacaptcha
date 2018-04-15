@@ -1,6 +1,6 @@
 package fr.upem.captcha;
 
-public class Image {
+public class ImageCaptcha {
 
     private String name;
     private String url;
@@ -39,7 +39,7 @@ public class Image {
         this.theme = theme;
     }
 
-    public Image(String name, String url, Theme theme) {
+    public ImageCaptcha(String name, String url, Theme theme) {
         this.name = name;
         this.url = url;
         this.selected = false;
