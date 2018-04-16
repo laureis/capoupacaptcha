@@ -1,34 +1,8 @@
 package fr.upem.captcha;
-import javax.swing.border.EmptyBorder;
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import javax.swing.JButton;
-import java.awt.Color;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
-import java.io.File;
-import javax.imageio.ImageIO;
-import javax.swing.AbstractAction;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextArea;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.BasicStroke;
-import java.awt.Graphics2D;
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 
 public class CaptchaImage extends JLabel {
 
@@ -71,13 +45,14 @@ public class CaptchaImage extends JLabel {
         this.setHorizontalTextPosition(SwingConstants.CENTER);
         this.setIcon(img);
         this.addEvents();
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
     public void selectImage() {
 
         this.selected = true;
         Graphics g = getGraphics();
-        g.setColor(Color.WHITE);
+        g.setColor(new Color(0x333333));
         g.fillRect(30, 27, 10, 100);
         g.fillRect(30, 117, 100, 10);
         g.dispose();

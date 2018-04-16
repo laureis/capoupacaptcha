@@ -1,5 +1,4 @@
 package fr.upem.captcha;
-import java.util.ArrayList;
 
 public class Theme {
 

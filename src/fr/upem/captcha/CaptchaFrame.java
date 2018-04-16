@@ -1,15 +1,7 @@
 package fr.upem.captcha;
 
-import javax.swing.JButton;
-import java.awt.Color;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
-import java.awt.BorderLayout;
-import java.awt.Graphics;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
-import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.*;
 
 public class CaptchaFrame extends JFrame {
 

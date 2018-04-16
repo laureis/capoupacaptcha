@@ -33,7 +33,8 @@ public class CaptchaController {
 
     public void setRandomTheme() {
 
-        File[] folders = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"data").listFiles();
+        this.images.clear();
+        File[] folders = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images").listFiles();
     	int folderCount = folders.length;
     	int randomIndex = ThreadLocalRandom.current().nextInt(0, folderCount);
 
@@ -81,8 +82,11 @@ public class CaptchaController {
     public boolean checkSelectedImages() {
 
         for (int i = 0; i < this.images.size(); i++) {
-            if (this.images.get(i).getSelected()) {
-                if (this.images.get(i).getTheme() != this.mainTheme) return false; 
+            if (this.images.get(i).getTheme() != this.mainTheme && this.images.get(i).getSelected()) {
+                return false; 
+            }
+            if (this.images.get(i).getTheme() == this.mainTheme && !this.images.get(i).getSelected()) {
+                return false; 
             }
         }
         return true;
