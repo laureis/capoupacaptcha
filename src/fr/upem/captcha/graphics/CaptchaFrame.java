@@ -1,4 +1,4 @@
-package fr.upem.captcha;
+package fr.upem.captcha.graphics;
 
 import java.awt.*;
 import javax.swing.*;

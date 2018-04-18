@@ -1,5 +1,6 @@
 package fr.upem.captcha;
 
+import fr.upem.captcha.graphics.*;
 import java.awt.*;
 import javax.swing.*;
 import java.net.URL;

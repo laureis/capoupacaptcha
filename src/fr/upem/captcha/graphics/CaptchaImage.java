@@ -1,5 +1,6 @@
-package fr.upem.captcha;
+package fr.upem.captcha.graphics;
 
+import fr.upem.captcha.Theme;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
