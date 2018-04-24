@@ -4,7 +4,11 @@ public class App implements Runnable {
 
     public void run() {
         
+        final Menu menu = new Menu();
+        menu.display();
+        /*
         final Captcha captcha = new Captcha();
         captcha.display();
+        */
     }
 }

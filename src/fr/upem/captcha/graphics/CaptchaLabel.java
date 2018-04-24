@@ -5,11 +5,11 @@ import javax.swing.*;
 
 public class CaptchaLabel extends JLabel {
 
-    public CaptchaLabel(String label) {
+    public CaptchaLabel(String label, boolean isTitle) {
 
         super();
         setText(getHTMLStyle(label));
-        setFont(new Font("Raleway-Bold", Font.PLAIN, 16));
+        setFont(new Font("Raleway-Bold", Font.PLAIN, (isTitle) ? 24 : 16));
     }
 
     public String getHTMLStyle(String label)  {
