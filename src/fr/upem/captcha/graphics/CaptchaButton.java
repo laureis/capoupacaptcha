@@ -21,7 +21,7 @@ public class CaptchaButton extends JButton {
 
     public String getHTMLStyle(String label) {
 
-        String newLabel = "<html><div style='padding:30px; color:#333333; font-size:10px; font-family:Arial;'>"
+        String newLabel = "<html><div style='padding-bottom:30px; padding-top: 30px; padding-left:10px; padding-right:auto; color:#333333; font-size:10px; font-family:Arial;'>"
             +label
             +"</div></html>";
         return newLabel;

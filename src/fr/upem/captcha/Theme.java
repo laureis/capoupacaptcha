@@ -63,7 +63,7 @@ public class Theme {
     public boolean isCorrect(CaptchaImage image) {
 
         for (CaptchaImage i : this.images) {
-            if (image == i) return true;
+            if ((image == i) && image.getSelected()) return true;
         }
         return false;
     }

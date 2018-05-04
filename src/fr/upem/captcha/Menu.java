@@ -27,14 +27,14 @@ public class Menu extends CaptchaFrame {
     public void displayInstruction() {
 
         panelDesc.setBackground(null);
-        panelDesc.add(new CaptchaLabel("CAPOUPACAPTCHA ?", true));
+        panelDesc.add(new CaptchaLabel("CAPOUPACAPTCHA ?", 1));
         this.add(panelDesc, BorderLayout.NORTH);
     }
 
     public void displayInfo() {
 
         panelInfo.setBackground(null);
-        panelInfo.add(new CaptchaLabel("Un projet incroyable", false));
+        panelInfo.add(new CaptchaLabel("Un projet incroyable", 2));
         this.add(panelInfo, BorderLayout.SOUTH);
     }
 
