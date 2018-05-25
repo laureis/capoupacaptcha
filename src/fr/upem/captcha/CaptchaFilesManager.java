@@ -11,34 +11,24 @@ import java.io.FilenameFilter;
 public class CaptchaFilesManager {
 
 	public static void getAllFilesWithExtension(File dir, String extension, ArrayList<CaptchaImage> images) {
-        try {
-			File[] files = dir.listFiles();
-			for (File file : files) {
-				if (file.isDirectory()) {
-					System.out.println("directory:" + file.getCanonicalPath());
-					getAllFilesWithExtension(file, extension, images);
-				} else {
-					if (file.getName().endsWith(extension)) images.add(new CaptchaImage(file.getName(), file.getAbsolutePath(), null));
-				}
+
+		File[] files = dir.listFiles();
+		for (File file : files) {
+			if (file.isDirectory()) {
+				getAllFilesWithExtension(file, extension, images);
+			} else {
+				if (file.getName().endsWith(extension)) images.add(new CaptchaImage(file.getName(), file.getAbsolutePath(), null));
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 
     public static void getAllFilesAndDirectories(File dir) {
-        try {
-			File[] files = dir.listFiles();
-			for (File file : files) {
-				if (file.isDirectory()) {
-					System.out.println("directory:" + file.getCanonicalPath());
-					getAllFilesAndDirectories(file);
-				} else {
-					System.out.println("     file:" + file.getPath());
-				}
+        
+		File[] files = dir.listFiles();
+		for (File file : files) {
+			if (file.isDirectory()) {
+				getAllFilesAndDirectories(file);
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
     }
 
@@ -48,7 +38,6 @@ public class CaptchaFilesManager {
 		level --;
 		for (File file : files) {
 			if (file.isDirectory()) {
-				System.out.println(file.getName() + " added ! ");
 				allDirectories.add(file);
 			}
 		}
@@ -60,9 +49,4 @@ public class CaptchaFilesManager {
 			}
 		}
     }
-
-    public static String getClassFiles() {
-		return "mdr";
-    }
-
 }

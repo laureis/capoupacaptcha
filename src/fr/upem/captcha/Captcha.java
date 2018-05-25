@@ -39,7 +39,6 @@ public class Captcha extends CaptchaFrame {
         panelImages.setBackground(null);
 		panelImages.setLayout(layoutImages);
 		for (int i = 0; i < 6; i++) {
-			System.out.println(controller.getImages().get(i).getUrl());
 			panelImages.add(controller.getImages().get(i));
 		}
 		this.add(panelImages);
@@ -50,7 +49,7 @@ public class Captcha extends CaptchaFrame {
 		panelDesc.removeAll();
 		panelSubmit.removeAll();
 		panelImages.removeAll();
-		controller.setRandomTheme(0, new File("."));
+		controller.refresh();
 		display();
 	}
 

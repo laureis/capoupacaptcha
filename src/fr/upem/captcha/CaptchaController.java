@@ -14,10 +14,14 @@ public class CaptchaController {
 	
     private int level;
     private Images theme;
-    private Theme mainTheme;
     private ArrayList<CaptchaImage> images = new ArrayList<CaptchaImage>();
 	
     public CaptchaController() {
+        this.level = 1;
+        this.setRandomTheme(this.level, new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"));
+    }
+
+    public void refresh() {
         this.level = 1;
         this.setRandomTheme(this.level, new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"));
     }
@@ -48,11 +52,6 @@ public class CaptchaController {
         this.images = images;
     }
 
-    public String toString() {
-
-        return this.mainTheme.toString();
-    }
-
     public void setRandomTheme(int level, File dir) {
     
         ArrayList<File> allDirectories = new ArrayList<File>();
@@ -62,23 +61,13 @@ public class CaptchaController {
             Class<?> themeClass = Class.forName("fr.upem.captcha.images."+allDirectories.get(randomIndex).getName()+"."+allDirectories.get(randomIndex).getName().substring(0,1).toUpperCase()+allDirectories.get(randomIndex).getName().substring(1).toLowerCase());
             Object o = themeClass.newInstance(); 
             this.theme = (Images) o;
-            this.images = this.theme.getImages(6);
-            
+            this.images = this.theme.getImages(ThreadLocalRandom.current().nextInt(1, 4));
+            Collections.shuffle(this.images);
         } catch (Exception e) {
             System.out.println(e.toString());
         }
     }
 
-    // fonction qui constuit un tableau d'image contenant entre 1 et 4 images correspondant au thème
-    // principal du captcha et d'autres images correspondant à un autre thème
-    public void smartShuffle() {
-
-        int nbGood = ThreadLocalRandom.current().nextInt(1, 4);
-        this.images = this.mainTheme.getImages(ThreadLocalRandom.current().nextInt(1, 4);
-        Collections.shuffle(this.images);
-    }
-
-    // fonction qui vérifie que toutes les images sélectionnées appartiennet au thème principal du captcha
     public boolean checkSelectedImages() {
 
         for (int i = 0; i < this.images.size(); i++) {
