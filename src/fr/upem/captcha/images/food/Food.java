@@ -7,11 +7,14 @@ import fr.upem.captcha.graphics.*;
 import java.io.File;
 import java.io.IOException;
 
-public class Green implements Images {
+public class Food implements Images {
 
-    public void Green() {
+    public void Food() {
+        
+    }
 
-        this.getImages(new File(".."));
+    public void display() {
+        System.out.println("omg it works");
     }
     
     // on récupère toutes les images du thème green

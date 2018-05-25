@@ -7,7 +7,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Theme implements Images {
+public class Theme {
 
     private int level;
     private String name;

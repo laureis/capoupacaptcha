@@ -4,12 +4,14 @@ import fr.upem.captcha.*;
 import fr.upem.captcha.images.*;
 import java.util.ArrayList;
 import fr.upem.captcha.graphics.*; 
+import java.io.File;
+import java.io.IOException;
 
 public class Red implements Images {
 
-    public ArrayList<CaptchaImage> getImages() {
+    public void getImages(File dir) {
         ArrayList<CaptchaImage> mdr = new ArrayList<CaptchaImage>();
-        return mdr;
+        //return mdr;
     }
     
     public ArrayList<CaptchaImage> getImages(int number) {

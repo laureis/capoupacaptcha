@@ -4,6 +4,8 @@ import fr.upem.captcha.graphics.*;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.IOException;
 
 public class Captcha extends CaptchaFrame {
 
@@ -18,11 +20,12 @@ public class Captcha extends CaptchaFrame {
     }
 
 	public void display() {
-
+/*
 		displayInstruction();
 		displayImages();
 		displaySubmitButton();
 		this.setVisible(true);
+	*/
 	}
 
 	public void displayInstruction() {
@@ -49,7 +52,7 @@ public class Captcha extends CaptchaFrame {
 		panelDesc.removeAll();
 		panelSubmit.removeAll();
 		panelImages.removeAll();
-		controller.setRandomTheme(0);
+		controller.setRandomTheme(0, new File("."));
 		display();
 	}
 
