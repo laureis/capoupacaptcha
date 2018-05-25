@@ -7,6 +7,11 @@ import fr.upem.captcha.graphics.*;
 
 public class Red implements Images {
 
+    public ArrayList<CaptchaImage> getImages() {
+        ArrayList<CaptchaImage> mdr = new ArrayList<CaptchaImage>();
+        return mdr;
+    }
+    
     public ArrayList<CaptchaImage> getImages(int number) {
         ArrayList<CaptchaImage> mdr = new ArrayList<CaptchaImage>();
         return mdr;
