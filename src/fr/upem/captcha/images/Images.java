@@ -8,7 +8,8 @@ import java.util.Collections;
 
 public interface Images {
 
-    public void getImages(File dir);    
+    public String getName();
+    public ArrayList<CaptchaImage> getImages();    
     public ArrayList<CaptchaImage> getImages(int number);
     public boolean isCorrect(CaptchaImage image);
 }

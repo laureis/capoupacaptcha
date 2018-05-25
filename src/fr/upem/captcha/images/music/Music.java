@@ -1,4 +1,4 @@
-package fr.upem.captcha.images.food;
+package fr.upem.captcha.images.music;
 
 import fr.upem.captcha.*;
 import fr.upem.captcha.images.*;
@@ -8,19 +8,21 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 
-public class Food implements Images {
+public class Music implements Images {
 
-    public void Food() {   
+    public void Music() {
+        
     }
 
     public String getName() {
 
-        return "Food";    
+        return "Music";    
     }
+    
     
     public ArrayList<CaptchaImage> getImages() {
 
-        File dir = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"food");
+        File dir = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music");
         ArrayList<CaptchaImage> images = new ArrayList<CaptchaImage>();
         CaptchaFilesManager.getAllFilesWithExtension(dir, "png", images);
         Collections.shuffle(images);

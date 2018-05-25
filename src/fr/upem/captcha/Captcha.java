@@ -20,18 +20,16 @@ public class Captcha extends CaptchaFrame {
     }
 
 	public void display() {
-/*
 		displayInstruction();
 		displayImages();
 		displaySubmitButton();
 		this.setVisible(true);
-	*/
 	}
 
 	public void displayInstruction() {
 
 		panelDesc.setBackground(null);
-        panelDesc.add(new CaptchaLabel("Cap ou pas cap de choisir les images "+controller.getMainTheme().getName()+" ?", 3));
+        panelDesc.add(new CaptchaLabel("Cap ou pas cap de choisir les images "+controller.getTheme().getName()+" ?", 3));
 		this.add(panelDesc, BorderLayout.NORTH);
 	}
 
