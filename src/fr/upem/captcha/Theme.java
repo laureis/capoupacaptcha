@@ -1,12 +1,13 @@
 package fr.upem.captcha;
 
 import fr.upem.captcha.graphics.*;
+import fr.upem.captcha.images.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Theme {
+public class Theme implements Images {
 
     private int level;
     private String name;

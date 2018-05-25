@@ -1,6 +1,7 @@
 package fr.upem.captcha;
 
 import fr.upem.captcha.graphics.*;
+import fr.upem.captcha.images.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.io.File;
 import java.util.ArrayList;
@@ -8,11 +9,23 @@ import java.util.Collections;
 
 public class CaptchaController {
 	
+    private int level;
+    private Images theme;
     private Theme mainTheme;
     private ArrayList<CaptchaImage> images = new ArrayList<CaptchaImage>();
 	
     public CaptchaController() {
-        this.setRandomTheme();
+        this.setRandomTheme(0);
+    }
+
+    public int getLevel() {
+        
+        return this.level; 
+    }
+
+    public Images getTheme() {
+        
+        return this.theme;
     }
 
     public Theme getMainTheme() {
@@ -25,6 +38,15 @@ public class CaptchaController {
         return this.images;
     }
 
+    public void setLevel(int level) {
+
+        this.level = level;
+    }
+    
+    public void setTheme(Images theme) {
+
+        this.theme = theme;
+    }
 
     public void setImages(ArrayList<CaptchaImage> images) {
 
@@ -36,12 +58,22 @@ public class CaptchaController {
         return this.mainTheme.toString();
     }
 
-    public void setRandomTheme() {
+    public void setRandomTheme(int level) {
+
+        // TODO
+        // à partir de tous les fichiers .java et du level, on utilise l'introspection et on crée un nouveau fichier d'une certaine  classe
+        // choisie aléatoirement
+        // puis on appelle la fonction getImages de cette classe
+        // et remplit le tableau d'images du controller
 
         this.images.clear();
         File[] folders = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images").listFiles();
     	int folderCount = folders.length;
     	int randomIndex = ThreadLocalRandom.current().nextInt(0, folderCount);
+        for (int i = 0; i < folders.length; i++) {
+            System.out.println(folders[randomIndex].getName());
+            // System.out.println(folders[randomIndex].getPath() + " " + folders[randomIndex].getPath().endsWith(".java"));
+        }
 
         Theme theme = new Theme(folders[randomIndex].getName(), folders[randomIndex].getPath());
         this.mainTheme = theme;

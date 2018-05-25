@@ -49,7 +49,7 @@ public class Captcha extends CaptchaFrame {
 		panelDesc.removeAll();
 		panelSubmit.removeAll();
 		panelImages.removeAll();
-		controller.setRandomTheme();
+		controller.setRandomTheme(0);
 		display();
 	}
 
