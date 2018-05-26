@@ -61,8 +61,10 @@ public class Captcha extends CaptchaFrame {
 			@SuppressWarnings("unused")
 			public void actionPerformed(ActionEvent arg0) {
                 System.out.println(controller.checkSelectedImages());
-                JOptionPane.showMessageDialog(null, controller.checkSelectedImages() ? "bien ouej frere" : "ohlala tu es un robot", "Capoupacaptcha" ,JOptionPane.INFORMATION_MESSAGE);
-				refresh();
+                boolean done = controller.checkSelectedImages();
+				JOptionPane.showMessageDialog(null, done ? "You're free to go ! " : "Ohlala tu es un robot", "Capoupacaptcha" ,JOptionPane.INFORMATION_MESSAGE);
+				if (done) dispose();
+				else refresh();
 			}
         });
 		panelSubmit.add(submitButton);
