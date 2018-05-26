@@ -1,8 +1,6 @@
 package fr.upem.captcha;
-import java.io.IOException;
-import java.io.File;
-import java.io.IOException;
 
+// Classe principale
 public class Main {
 
 	public static void main(String[] args) {

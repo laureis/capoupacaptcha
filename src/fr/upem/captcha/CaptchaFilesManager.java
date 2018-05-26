@@ -8,8 +8,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.io.FilenameFilter;
 
+// Classe de gestion de fichiers pour l'application Capoupacaptcha
+
 public class CaptchaFilesManager {
 
+	// cette méthode doit être appelée seulement si c'est les fichiers recherchées sont des images
+	// on récupère tous les fichiers du dossier et des sous dossiers à partir d'un File, d'une certaines extension
+	// on crée un objet de type CaptchaImage 
+	// et l'ajoute à une liste passé en paramètre
 	public static void getAllFilesWithExtension(File dir, String extension, ArrayList<CaptchaImage> images) {
 
 		File[] files = dir.listFiles();
@@ -23,16 +29,8 @@ public class CaptchaFilesManager {
 		}
 	}
 
-    public static void getAllFilesAndDirectories(File dir) {
-        
-		File[] files = dir.listFiles();
-		for (File file : files) {
-			if (file.isDirectory()) {
-				getAllFilesAndDirectories(file);
-			}
-		}
-    }
-
+	// à partir du dossier "dir", on récupère tous les fichiers contenu dans le niveau "level"
+	// et on les ajoute à une liste passée en paramètre
     public static void getDirectories(int level, File dir, ArrayList<File> allDirectories) {
         
 		File[] files = dir.listFiles();

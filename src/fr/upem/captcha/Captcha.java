@@ -7,18 +7,22 @@ import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 
+// Classe de gestion de l'application
+
 public class Captcha extends CaptchaFrame {
 
-	private CaptchaController controller = new CaptchaController();
-	private JPanel panelDesc = new JPanel(); 
-	private JPanel panelImages = new JPanel();
-	private JPanel panelSubmit = new JPanel();
+	private CaptchaController controller = new CaptchaController(); // contrôleur de niveau et de vérification
+	private JPanel panelDesc = new JPanel();  // panneau de description et d'instruction
+	private JPanel panelImages = new JPanel(); // panneau des images
+	private JPanel panelSubmit = new JPanel(); // panneau du bouton submit
 
+	// création d'une fenêtre CaptchaFrame basique
 	public Captcha() {
 
 		super();
     }
 
+	// affichage de la fenêtre
 	public void display() {
 		displayInstruction();
 		displayImages();
@@ -26,6 +30,7 @@ public class Captcha extends CaptchaFrame {
 		this.setVisible(true);
 	}
 
+	// ajout du panneau d'instruction à la fenêtre
 	public void displayInstruction() {
 
 		panelDesc.setBackground(null);
@@ -33,6 +38,7 @@ public class Captcha extends CaptchaFrame {
 		this.add(panelDesc, BorderLayout.NORTH);
 	}
 
+	// ajout du panneau d'images à la fenêtre
 	public void displayImages() {
 
 		GridLayout layoutImages = new GridLayout(3,2);
@@ -42,15 +48,6 @@ public class Captcha extends CaptchaFrame {
 			panelImages.add(controller.getImages().get(i));
 		}
 		this.add(panelImages);
-	}
-
-	public void refresh() {
-		
-		panelDesc.removeAll();
-		panelSubmit.removeAll();
-		panelImages.removeAll();
-		controller.refresh();
-		display();
 	}
 
 	public void displaySubmitButton() {
@@ -72,6 +69,16 @@ public class Captcha extends CaptchaFrame {
         });
 		panelSubmit.add(submitButton);
 		this.add(panelSubmit, BorderLayout.SOUTH);
+	}
+
+	// nouvelle exécution
+	public void refresh() {
+		
+		panelDesc.removeAll();
+		panelSubmit.removeAll();
+		panelImages.removeAll();
+		controller.refresh();
+		display();
 	}
 }
 

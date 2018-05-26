@@ -5,27 +5,28 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
+// Classe du menu de l'application
 
 public class Menu extends CaptchaFrame {
 
-    private JPanel panelTitle = new JPanel();
-    private JPanel panelDesc = new JPanel();
-    private JPanel panelInfo = new JPanel();
-    private JPanel panelSubmit = new JPanel();
+    private JPanel panelTitle = new JPanel(); // panneau du titre
+    private JPanel panelDesc = new JPanel(); // panneau de la description
+    private JPanel panelStart = new JPanel(); // panneau du bouton start
 
     public Menu() {
         super();
     }
 
+    // affichage du menu
     public void display() {
 
         displayTitle();
         displayDesc();
         displayStartButton();
-        // displayInfo();
         this.setVisible(true);
     }
 
+    // ajout du titre au menu
     public void displayTitle() {
 
         panelTitle.setBackground(null);
@@ -33,6 +34,7 @@ public class Menu extends CaptchaFrame {
         this.add(panelTitle, BorderLayout.NORTH);
     }
 
+    // ajout de la description au menu
     public void displayDesc() {
         panelDesc.setBackground(null);
         panelDesc.add(new CaptchaLabel("captcha", 2, 0));
@@ -44,16 +46,12 @@ public class Menu extends CaptchaFrame {
         this.add(panelDesc, BorderLayout.CENTER);
     }
 
-    public void displayInfo() {
-
-        panelInfo.setBackground(null);
-        panelInfo.add(new CaptchaLabel("Un projet IMAC / réalisé par Antoine Miaud et Laure Issa / Mai 2018", 5, 5));
-        this.add(panelInfo, BorderLayout.SOUTH);
-    }
-
+    // ajout du bouton "start" au menu
+    // au clic sur le bouton, la fenêtre du menu est fermée et 
+    // la fenêtre du test est lancée
     public void displayStartButton() {
 
-        panelSubmit.setBackground(null);
+        panelStart.setBackground(null);
         CaptchaButton submitButton = new CaptchaButton("Faire le test");
         submitButton.addActionListener( new ActionListener() {
             @SuppressWarnings("unused")
@@ -63,7 +61,7 @@ public class Menu extends CaptchaFrame {
                 captcha.display();
             }
         });
-        panelSubmit.add(submitButton);
+        panelStart.add(submitButton);
         this.add(panelSubmit, BorderLayout.SOUTH);
     }
 }
