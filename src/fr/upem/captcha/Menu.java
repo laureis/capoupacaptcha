@@ -59,7 +59,6 @@ public class Menu extends CaptchaFrame {
             @SuppressWarnings("unused")
             public void actionPerformed(ActionEvent arg0) {
                 final Captcha captcha = new Captcha();
-                setVisible(false);
                 dispose();
                 captcha.display();
             }
