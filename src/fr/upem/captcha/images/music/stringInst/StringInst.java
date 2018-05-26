@@ -29,7 +29,6 @@ public class StringInst implements Images {
 
     public ArrayList<CaptchaImage> getImages(int number) {
         
-        System.out.println(number);
         ArrayList<CaptchaImage> allImages = new ArrayList<CaptchaImage>();
         CaptchaFilesManager.getAllFilesWithExtension(new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"+File.separator+"wind"), "png", allImages);
         Collections.shuffle(allImages);

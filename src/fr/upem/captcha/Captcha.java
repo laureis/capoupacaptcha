@@ -61,7 +61,6 @@ public class Captcha extends CaptchaFrame {
 		submitButton.addActionListener( new ActionListener() {
 			@SuppressWarnings("unused")
 			public void actionPerformed(ActionEvent arg0) {
-                System.out.println(controller.checkSelectedImages());
                 boolean done = controller.checkSelectedImages();
 				JOptionPane.showMessageDialog(null, done ? "Bien joué ! " : "Oops ! Vous pouvez réessayer.", "Capoupacaptcha" ,JOptionPane.INFORMATION_MESSAGE);
 				if (done) {

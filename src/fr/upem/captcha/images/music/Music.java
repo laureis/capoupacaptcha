@@ -30,7 +30,6 @@ public class Music implements Images {
 
     public ArrayList<CaptchaImage> getImages(int number) {
      
-        System.out.println(number);
         ArrayList<CaptchaImage> allImages = new ArrayList<CaptchaImage>();
         CaptchaFilesManager.getAllFilesWithExtension(new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"food"), "png", allImages);
         Collections.shuffle(allImages);
