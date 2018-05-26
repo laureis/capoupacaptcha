@@ -3,6 +3,7 @@ package fr.upem.captcha.graphics;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.Random;
 
 public class CaptchaImage extends JLabel {
 
@@ -40,9 +41,13 @@ public class CaptchaImage extends JLabel {
 
     public void selectImage() {
 
+        Random rand = new Random();
         this.selected = true;
         Graphics g = getGraphics();
-        g.setColor(new Color(0x333333));
+        float r = rand.nextFloat()/ 2f + 0.5f;
+        float v = rand.nextFloat()/ 2f + 0.5f;
+        float b = rand.nextFloat()/ 2f + 0.5f;
+        g.setColor(new Color(r, v, b));
         g.fillRect(30, 27, 10, 100);
         g.fillRect(30, 117, 100, 10);
         g.dispose();

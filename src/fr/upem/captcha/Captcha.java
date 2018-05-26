@@ -56,13 +56,13 @@ public class Captcha extends CaptchaFrame {
 	public void displaySubmitButton() {
 
     	panelSubmit.setBackground(null);
-		CaptchaButton submitButton = new CaptchaButton("S U B M I T");
+		CaptchaButton submitButton = new CaptchaButton("vérifier");
 		submitButton.addActionListener( new ActionListener() {
 			@SuppressWarnings("unused")
 			public void actionPerformed(ActionEvent arg0) {
                 System.out.println(controller.checkSelectedImages());
                 boolean done = controller.checkSelectedImages();
-				JOptionPane.showMessageDialog(null, done ? "You're free to go ! " : "Ohlala tu es un robot", "Capoupacaptcha" ,JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, done ? "Bien joué ! " : "Hold on ! Réessayez.", "Capoupacaptcha" ,JOptionPane.INFORMATION_MESSAGE);
 				if (done) dispose();
 				else refresh();
 			}

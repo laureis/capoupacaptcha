@@ -27,7 +27,7 @@ public class Menu extends CaptchaFrame {
     public void displayInstruction() {
 
         panelDesc.setBackground(null);
-        panelDesc.add(new CaptchaLabel("CAPOUPACAPTCHA ?", 1));
+        panelDesc.add(new CaptchaLabel("CAPOUPACAPTCHA?", 1));
         this.add(panelDesc, BorderLayout.NORTH);
     }
 
@@ -41,7 +41,7 @@ public class Menu extends CaptchaFrame {
     public void displayStartButton() {
 
         panelSubmit.setBackground(null);
-        CaptchaButton submitButton = new CaptchaButton("EN BAMBE");
+        CaptchaButton submitButton = new CaptchaButton("Tester");
         submitButton.addActionListener( new ActionListener() {
             @SuppressWarnings("unused")
             public void actionPerformed(ActionEvent arg0) {

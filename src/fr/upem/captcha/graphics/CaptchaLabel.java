@@ -16,7 +16,7 @@ public class CaptchaLabel extends JLabel {
 
     public String getHTMLStyle(String label, int h)  {
 
-        String newLabel = "<html><div style=' padding:10px; width:190px; color:#333333; font-weight:bold; font-family:Arial;'>"
+        String newLabel = "<html><div style=' padding:10px; width:190px; color:#fdedec; font-weight:bold; font-family:monospace;'>"
             +"<h"+h+">"+label+"</h"+h+">"
             +"</div></html>";
         return newLabel;
