@@ -16,7 +16,7 @@ public class Strawberry implements Images {
 
     public String getName() {
 
-        return "gâteau à la fraise";    
+        return "les gâteaux à la fraise";    
     }
     
     public ArrayList<CaptchaImage> getImages() {

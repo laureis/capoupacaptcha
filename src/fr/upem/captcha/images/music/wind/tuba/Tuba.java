@@ -16,7 +16,7 @@ public class Tuba implements Images {
 
     public String getName() {
 
-        return "tuba";    
+        return "les tubas";    
     }
     
     public ArrayList<CaptchaImage> getImages() {

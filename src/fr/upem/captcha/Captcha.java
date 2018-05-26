@@ -29,7 +29,7 @@ public class Captcha extends CaptchaFrame {
 	public void displayInstruction() {
 
 		panelDesc.setBackground(null);
-        panelDesc.add(new CaptchaLabel("Cap ou pas cap de choisir les images "+controller.getTheme().getName()+" ?", 3));
+        panelDesc.add(new CaptchaLabel("Cap ou pas cap de choisir "+controller.getTheme().getName()+" ?", 3, 10));
 		this.add(panelDesc, BorderLayout.NORTH);
 	}
 

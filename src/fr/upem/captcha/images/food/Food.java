@@ -16,7 +16,7 @@ public class Food implements Images {
 
     public String getName() {
 
-        return "nourriture";    
+        return "la nourriture";    
     }
     
     public ArrayList<CaptchaImage> getImages() {

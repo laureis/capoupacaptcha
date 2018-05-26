@@ -16,7 +16,7 @@ public class SweetPotato implements Images {
 
     public String getName() {
 
-        return "patates douces";    
+        return "les patates douces";    
     }
     
     public ArrayList<CaptchaImage> getImages() {

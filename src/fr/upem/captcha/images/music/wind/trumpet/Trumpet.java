@@ -16,7 +16,7 @@ public class Trumpet implements Images {
 
     public String getName() {
 
-        return "trompette";    
+        return "les trompettes";    
     }
     
     public ArrayList<CaptchaImage> getImages() {

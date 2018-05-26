@@ -16,7 +16,7 @@ public class Vegetables implements Images {
 
     public String getName() {
 
-        return "légumes";    
+        return "les légumes";    
     }
     
     public ArrayList<CaptchaImage> getImages() {

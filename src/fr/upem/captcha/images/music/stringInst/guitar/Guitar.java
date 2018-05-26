@@ -16,7 +16,7 @@ public class Guitar implements Images {
 
     public String getName() {
 
-        return "guitare";    
+        return "les guitares";    
     }
     
     public ArrayList<CaptchaImage> getImages() {

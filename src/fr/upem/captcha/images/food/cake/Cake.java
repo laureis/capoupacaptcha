@@ -16,7 +16,7 @@ public class Cake implements Images {
 
     public String getName() {
 
-        return "gâteau";    
+        return "les gâteaux";    
     }
     
     public ArrayList<CaptchaImage> getImages() {

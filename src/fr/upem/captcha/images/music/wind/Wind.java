@@ -16,7 +16,7 @@ public class Wind implements Images {
 
     public String getName() {
 
-        return "instruments à vent";    
+        return "les instruments à vent";    
     }
     
     public ArrayList<CaptchaImage> getImages() {

@@ -16,7 +16,7 @@ public class Raspberry implements Images {
 
     public String getName() {
 
-        return "gâteau à la framboise";    
+        return "les gâteaux à la framboise";    
     }
     
     public ArrayList<CaptchaImage> getImages() {

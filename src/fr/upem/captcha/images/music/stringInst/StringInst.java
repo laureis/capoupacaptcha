@@ -16,7 +16,7 @@ public class StringInst implements Images {
 
     public String getName() {
 
-        return "instruments à cordes";    
+        return "les instruments à cordes";    
     }
     
     public ArrayList<CaptchaImage> getImages() {

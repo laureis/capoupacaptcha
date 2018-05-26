@@ -42,7 +42,7 @@ public class CaptchaImage extends JLabel {
 
         this.selected = true;
         Graphics g = getGraphics();
-        g.setColor(new Color(0xff5555));
+        g.setColor(new Color(0xe91e63));
         g.fillRect(30, 27, 10, 100);
         g.fillRect(30, 117, 100, 10);
         g.dispose();

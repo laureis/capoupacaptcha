@@ -17,7 +17,8 @@ public class CaptchaFilesManager {
 			if (file.isDirectory()) {
 				getAllFilesWithExtension(file, extension, images);
 			} else {
-				if (file.getName().endsWith(extension)) images.add(new CaptchaImage(file.getName(), file.getAbsolutePath()));
+				if (file.getName().endsWith(extension)) 
+					images.add(new CaptchaImage(file.getName(), file.getAbsolutePath()));
 			}
 		}
 	}
@@ -36,10 +37,9 @@ public class CaptchaFilesManager {
         
 		File[] files = dir.listFiles();
 		level --;
-		if (level == 0) allDirectories.clear();
 		for (File file : files) {
 			if (file.isDirectory()) {
-				allDirectories.add(file);
+				if (level == 0) allDirectories.add(file);
 			}
 		}
 		if (level > 0) {

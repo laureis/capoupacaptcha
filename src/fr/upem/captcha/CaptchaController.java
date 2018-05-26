@@ -12,7 +12,7 @@ import java.util.Collections;
 
 public class CaptchaController {
 	
-    private int level;
+    private int level; // 1: easy, 2: medium, 3: hard
     private Images theme;
     private ArrayList<CaptchaImage> images = new ArrayList<CaptchaImage>();
 	
