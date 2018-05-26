@@ -50,6 +50,10 @@ public class Captcha extends CaptchaFrame {
 		this.add(panelImages);
 	}
 
+	// ajout du panneau contenant le bouton de vérification
+	// au clic sur le bouton, si l'utilisateur a bien sélectionné les images
+	// on relance le thread de l'application
+	// sinon on relance un nouveau thème
 	public void displaySubmitButton() {
 
     	panelSubmit.setBackground(null);
@@ -71,7 +75,7 @@ public class Captcha extends CaptchaFrame {
 		this.add(panelSubmit, BorderLayout.SOUTH);
 	}
 
-	// nouvelle exécution
+	// on remet à zéro la fenêtre et le contrôleur
 	public void refresh() {
 		
 		panelDesc.removeAll();

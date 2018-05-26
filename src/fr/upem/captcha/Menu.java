@@ -62,6 +62,6 @@ public class Menu extends CaptchaFrame {
             }
         });
         panelStart.add(submitButton);
-        this.add(panelSubmit, BorderLayout.SOUTH);
+        this.add(panelStart, BorderLayout.SOUTH);
     }
 }
