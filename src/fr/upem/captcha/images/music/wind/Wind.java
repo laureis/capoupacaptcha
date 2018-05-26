@@ -31,7 +31,7 @@ public class Wind implements Images {
         
         System.out.println(number);
         ArrayList<CaptchaImage> allImages = new ArrayList<CaptchaImage>();
-        CaptchaFilesManager.getAllFilesWithExtension(new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"+File.separator+"string"), "png", allImages);
+        CaptchaFilesManager.getAllFilesWithExtension(new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"+File.separator+"stringInst"), "png", allImages);
         Collections.shuffle(allImages);
         ArrayList<CaptchaImage> allImagesTheme = getImages();
         Collections.shuffle(allImagesTheme);

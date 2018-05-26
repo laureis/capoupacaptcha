@@ -53,12 +53,13 @@ public class CaptchaController {
     }
 
     public void setRandomTheme(int level, File dir) {
-    
+        
+        this.images.clear();
         ArrayList<File> allDirectories = new ArrayList<File>();
         CaptchaFilesManager.getDirectories(this.level, new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"), allDirectories);
         int randomIndex = ThreadLocalRandom.current().nextInt(0, allDirectories.size());
         try {
-            Class<?> themeClass = Class.forName("fr.upem.captcha.images."+allDirectories.get(randomIndex).getName().substring(0,1).toUpperCase()+allDirectories.get(randomIndex).getName().substring(1).toLowerCase());
+            Class<?> themeClass = Class.forName("fr.upem.captcha.images."+allDirectories.get(randomIndex).getName().substring(0,1).toUpperCase()+allDirectories.get(randomIndex).getName().substring(1));
             Object o = themeClass.newInstance(); 
             this.theme = (Images) o;
             System.out.println(this.level+"  "+this.theme.getName());

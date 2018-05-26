@@ -21,7 +21,7 @@ public class StringInst implements Images {
     
     public ArrayList<CaptchaImage> getImages() {
 
-        File dir = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"+File.separator+"string");
+        File dir = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"+File.separator+"stringInst");
         ArrayList<CaptchaImage> images = new ArrayList<CaptchaImage>();
         CaptchaFilesManager.getAllFilesWithExtension(dir, "png", images);
         return images;

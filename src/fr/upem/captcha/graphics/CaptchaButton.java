@@ -15,7 +15,7 @@ public class CaptchaButton extends JButton {
         this.setFocusPainted(false);
         this.setHorizontalAlignment(SwingConstants.CENTER);
         this.setHorizontalTextPosition(SwingConstants.CENTER);
-        this.setIcon(new ImageIcon("assets/btnn.png"));
+        this.setIcon(new ImageIcon("assets/button.png"));
         this.setCursor(new Cursor(Cursor.HAND_CURSOR));        
     }
 

@@ -21,7 +21,7 @@ public class Ukulele implements Images {
     
     public ArrayList<CaptchaImage> getImages() {
 
-        File dir = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"+File.separator+"string"+File.separator+"ukulele");
+        File dir = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"+File.separator+"stringInst"+File.separator+"ukulele");
         ArrayList<CaptchaImage> images = new ArrayList<CaptchaImage>();
         CaptchaFilesManager.getAllFilesWithExtension(dir, "png", images);
         return images;
@@ -31,7 +31,7 @@ public class Ukulele implements Images {
         
         System.out.println(number);
         ArrayList<CaptchaImage> allImages = new ArrayList<CaptchaImage>();
-        CaptchaFilesManager.getAllFilesWithExtension(new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"+File.separator+"string"+File.separator+"guitar"), "png", allImages);
+        CaptchaFilesManager.getAllFilesWithExtension(new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"+File.separator+"stringInst"+File.separator+"guitar"), "png", allImages);
         Collections.shuffle(allImages);
         ArrayList<CaptchaImage> allImagesTheme = getImages();
         Collections.shuffle(allImagesTheme);

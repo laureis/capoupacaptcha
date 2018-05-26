@@ -36,6 +36,7 @@ public class CaptchaFilesManager {
         
 		File[] files = dir.listFiles();
 		level --;
+		if (level == 0) allDirectories.clear();
 		for (File file : files) {
 			if (file.isDirectory()) {
 				allDirectories.add(file);
