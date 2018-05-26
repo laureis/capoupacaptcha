@@ -9,19 +9,19 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 
-public class Food implements Images {
+public class Trumpet implements Images {
 
-    public void Food() {   
+    public void Trumpet() {   
     }
 
     public String getName() {
 
-        return "nourriture";    
+        return "trompette";    
     }
     
     public ArrayList<CaptchaImage> getImages() {
 
-        File dir = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"food");
+        File dir = new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"+File.separator+"wind"+File.separator+"trumpet");
         ArrayList<CaptchaImage> images = new ArrayList<CaptchaImage>();
         CaptchaFilesManager.getAllFilesWithExtension(dir, "png", images);
         return images;
@@ -31,7 +31,7 @@ public class Food implements Images {
         
         System.out.println(number);
         ArrayList<CaptchaImage> allImages = new ArrayList<CaptchaImage>();
-        CaptchaFilesManager.getAllFilesWithExtension(new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"), "png", allImages);
+        CaptchaFilesManager.getAllFilesWithExtension(new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"music"+File.separator+"wind"+File.separator+"tuba"), "png", allImages);
         Collections.shuffle(allImages);
         ArrayList<CaptchaImage> allImagesTheme = getImages();
         Collections.shuffle(allImagesTheme);

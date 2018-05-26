@@ -1,4 +1,4 @@
-package fr.upem.captcha.images.music;
+package fr.upem.captcha.images;
 
 import fr.upem.captcha.*;
 import fr.upem.captcha.images.*;
@@ -17,9 +17,8 @@ public class Music implements Images {
 
     public String getName() {
 
-        return "Music";    
+        return "instruments";    
     }
-    
     
     public ArrayList<CaptchaImage> getImages() {
 

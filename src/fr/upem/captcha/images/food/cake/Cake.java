@@ -1,4 +1,4 @@
-package fr.upem.captcha.images.food;
+package fr.upem.captcha.images;
 
 import fr.upem.captcha.*;
 import fr.upem.captcha.images.*;
@@ -16,7 +16,7 @@ public class Cake implements Images {
 
     public String getName() {
 
-        return "Cake";    
+        return "gâteau";    
     }
     
     public ArrayList<CaptchaImage> getImages() {
@@ -31,7 +31,7 @@ public class Cake implements Images {
         
         System.out.println(number);
         ArrayList<CaptchaImage> allImages = new ArrayList<CaptchaImage>();
-        CaptchaFilesManager.getAllFilesWithExtension(new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"food"+File.separator+"helado"), "png", allImages);
+        CaptchaFilesManager.getAllFilesWithExtension(new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"+File.separator+"food"+File.separator+"vegetables"), "png", allImages);
         Collections.shuffle(allImages);
         ArrayList<CaptchaImage> allImagesTheme = getImages();
         Collections.shuffle(allImagesTheme);

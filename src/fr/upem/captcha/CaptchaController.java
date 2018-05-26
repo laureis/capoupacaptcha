@@ -22,7 +22,7 @@ public class CaptchaController {
     }
 
     public void refresh() {
-        this.level = 1;
+        this.upgradeLevel();
         this.setRandomTheme(this.level, new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"));
     }
 
@@ -58,9 +58,10 @@ public class CaptchaController {
         CaptchaFilesManager.getDirectories(this.level, new File("src"+File.separator+"fr"+File.separator+"upem"+File.separator+"captcha"+File.separator+"images"), allDirectories);
         int randomIndex = ThreadLocalRandom.current().nextInt(0, allDirectories.size());
         try {
-            Class<?> themeClass = Class.forName("fr.upem.captcha.images."+allDirectories.get(randomIndex).getName()+"."+allDirectories.get(randomIndex).getName().substring(0,1).toUpperCase()+allDirectories.get(randomIndex).getName().substring(1).toLowerCase());
+            Class<?> themeClass = Class.forName("fr.upem.captcha.images."+allDirectories.get(randomIndex).getName().substring(0,1).toUpperCase()+allDirectories.get(randomIndex).getName().substring(1).toLowerCase());
             Object o = themeClass.newInstance(); 
             this.theme = (Images) o;
+            System.out.println(this.level+"  "+this.theme.getName());
             this.images = this.theme.getImages(ThreadLocalRandom.current().nextInt(1, 4));
             Collections.shuffle(this.images);
         } catch (Exception e) {
@@ -76,4 +77,8 @@ public class CaptchaController {
         return true;
     }
 
+    public void upgradeLevel() {
+
+        if (level < 3) level ++;
+    }
 }

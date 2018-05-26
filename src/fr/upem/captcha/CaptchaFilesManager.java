@@ -17,7 +17,7 @@ public class CaptchaFilesManager {
 			if (file.isDirectory()) {
 				getAllFilesWithExtension(file, extension, images);
 			} else {
-				if (file.getName().endsWith(extension)) images.add(new CaptchaImage(file.getName(), file.getAbsolutePath(), null));
+				if (file.getName().endsWith(extension)) images.add(new CaptchaImage(file.getName(), file.getAbsolutePath()));
 			}
 		}
 	}

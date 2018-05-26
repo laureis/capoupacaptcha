@@ -1,6 +1,5 @@
 package fr.upem.captcha.graphics;
 
-import fr.upem.captcha.Theme;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -9,7 +8,6 @@ public class CaptchaImage extends JLabel {
 
     private String url;
     private boolean selected; 
-    private Theme theme;
     private ImageIcon img;
 
     public String getUrl() {
@@ -18,10 +16,6 @@ public class CaptchaImage extends JLabel {
 
     public boolean getSelected() {
         return this.selected;
-    }
-
-    public Theme getTheme() {
-        return this.theme;
     }
     
     public void setUrl(String url) {
@@ -32,15 +26,10 @@ public class CaptchaImage extends JLabel {
         this.selected = selected;
     }
     
-    public void setTheme(Theme theme) {
-        this.theme = theme;
-    }
-
-    public CaptchaImage(String name, String url, Theme theme) {
+    public CaptchaImage(String name, String url) {
         super();
         this.url = url;
         this.selected = false;
-        this.theme = theme;
         this.img = new ImageIcon(new ImageIcon(url).getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH));
         this.setHorizontalAlignment(SwingConstants.CENTER);
         this.setHorizontalTextPosition(SwingConstants.CENTER);
