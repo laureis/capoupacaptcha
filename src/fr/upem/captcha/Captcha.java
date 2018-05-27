@@ -57,12 +57,12 @@ public class Captcha extends CaptchaFrame {
 	public void displaySubmitButton() {
 
     	panelSubmit.setBackground(null);
-		CaptchaButton submitButton = new CaptchaButton("vérifier");
+		CaptchaButton submitButton = new CaptchaButton("V\u00e9rifier");
 		submitButton.addActionListener( new ActionListener() {
 			@SuppressWarnings("unused")
 			public void actionPerformed(ActionEvent arg0) {
                 boolean done = controller.checkSelectedImages();
-				JOptionPane.showMessageDialog(null, done ? "Bien joué ! " : "Oops ! Vous pouvez réessayer.", "Capoupacaptcha" ,JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, done ? "Bien jou\u00e9 ! " : "Oops ! Vous pouvez r\u00e9essayer.", "Capoupacaptcha" ,JOptionPane.INFORMATION_MESSAGE);
 				if (done) {
 					dispose();
 					new Thread(new App()).start();
