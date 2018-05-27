@@ -39,10 +39,10 @@ public class Menu extends CaptchaFrame {
         panelDesc.setBackground(null);
         panelDesc.add(new CaptchaLabel("captcha", 2, 0));
         panelDesc.add(new CaptchaLabel("nom masculin", 4, 0));
-        panelDesc.add(new CaptchaLabel("Test requis pour accéder "
-            +"à certains services sur Internet, "
-            +"afin de différencier les utilisateurs humains d'éventuels "
-            +"robots malveillants.", 3, 0));
+        panelDesc.add(new CaptchaLabel("Test requis pour acc\u00e9der "
+            +"\u00e0 certains services sur Internet, "
+            +"afin de diff\u00e9rencier les vrais utilisateurs humains d'\u00e9ventuels "
+            +"robots mal intentionn\u00e9s.", 3, 0));
         this.add(panelDesc, BorderLayout.CENTER);
     }
 

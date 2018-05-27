@@ -16,7 +16,7 @@ public class Ukulele implements Images {
 
     public String getName() {
 
-        return "les ukuleles";    
+        return "les ukul\u00e9l\u00e9s";    
     }
     
     public ArrayList<CaptchaImage> getImages() {
